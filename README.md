@@ -29,7 +29,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>Actions and Observations</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/XTNZrl8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 We are going to be setting two virtual machines and observing the traffic between them. The first thing we are goint to do is create a Resource group withing Azure. Go to Microsoft Azure and type in the search bar "Rescource Group". At the top left hit the "Create button". Give a name for the rescource group, which we will use "LAB-3" and select an area. At the bottom left, hit the "Review + Create" and wait for it to validate it. Once that is done, hit the "Create" button.
@@ -37,7 +37,7 @@ We are going to be setting two virtual machines and observing the traffic betwee
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/AQVOgqD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Go to the Search bar and type "virtual machinse" and select "Virtual Machines". At the top left hit the "Create" button. Make sure to select the rescource group we made. Give an name for the virtual machine. We will name ours "VM1". Select a location and the first one we will be making a Windows 10. Under "image" select Windows 10. For the size, I would recommend 2 cores and 16 GiB memory. Create a user name and password and select review and create. 
@@ -45,7 +45,7 @@ Go to the Search bar and type "virtual machinse" and select "Virtual Machines". 
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/dvjKSvl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 While that virtual machine is being created, go back to the search bar and type "Virtual Machine" and select it again. This next Virtual machine, we will be making a linux machine. Make sure to select the same Rescource group and same Region and zone as the other virtual machine. Under image, select "Ubuntu Server 20.04 LTS - x64 Gen2". I recommend selecting 2 cores with 16 GiB memory. Under "Administrator account" select "Password" Create a user name and password. I will use labuser as my username.
@@ -53,7 +53,7 @@ While that virtual machine is being created, go back to the search bar and type 
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/QXhqbOE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Click next to Disks and then Next again to Networking section. Make sure on the "Network interface" make sure it is in the same Virtual network. For example mine created a "LAB-1-vnet" Yours should be the name of the rescource group with a -vnet. Click "Review and Create". Wait for validation to pass and finally hit "Create".
@@ -61,7 +61,7 @@ Click next to Disks and then Next again to Networking section. Make sure on the 
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/4gjfslV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 What you can do next is type in the search bar "Network watcher" and open it. Select "Topology" on the left side of the screen. Select your rescource group you made and the vnet that we talked about in the previous section. You can see the to virtual network interface cards (vnic) are coming form the rescource group vnet. Each vnic represents a Vitual machine, The Network security group, and the public ip address. Next we will be logging into VM1.
@@ -69,7 +69,7 @@ What you can do next is type in the search bar "Network watcher" and open it. Se
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/MW9Gmev.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Next
@@ -77,7 +77,7 @@ Next
 <br />
 Go to virtual machinse and click on "VM1". Find where it says "Public IP address" which should be on the right top. To the right of that should be a paper looking icon to copy the IP address. Click on that. Go to the search bar to the right of the start screen and type "Remote Desktop" and select it. Paste the IP address and click "Connect". Type in the username and password you created and click "Ok". Then click "Yes on the next screen. It should start loading. Deactivate the begining settings it pops up with and click "Accept". We are next going to install a program named Wire Shark to inspect traffic. 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/gzGiVVF.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 In the VM1 click on Microsoft Edge. Click "Start withou my data. Type in search Wire Shark. Click on the wireshark.org. There should be a download for Windows x64 and click on that. It should start downloading it at the top right of the screen. Once it is done, click on the download. Install with all the default settings by selecting next until installed. Once it is fully installed, close Microsoft Edge and go to the Search bar near the start button and type "wireshark"and open application.
