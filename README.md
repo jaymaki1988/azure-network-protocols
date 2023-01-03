@@ -168,6 +168,6 @@ We will try dns traffic. Go up to the search bar in Wireshark and type "dns". Cl
 <img src="https://i.imgur.com/WtgqnuU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lastly we will be inspecting rdp traffic. In the Wiore Shark, type in "rdp" or type in "tcp.port==3389" and we will see it spamming traffic. That's because whatever your local computer is doing, (typing, moving the mouse, and processes) are going to be causing non stop traffic. 
+Lastly we will be inspecting rdp traffic. In the Wireshark, type in "rdp" or type in "tcp.port==3389" and we will see it spamming traffic. That's because whatever your local computer is doing, (typing, moving the mouse, and processes) are going to be causing non stop traffic. 
 </p>
 <br />
