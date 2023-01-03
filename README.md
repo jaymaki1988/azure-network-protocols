@@ -88,7 +88,7 @@ In the VM1 click on Microsoft Edge. Click "Start without my data. Type in search
 <img src="https://i.imgur.com/VgxlaDj.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Once wireshark is open, click on the fin icon on the top left to start capturing packets. This will show all the activity on the virtual machine. Click in the search bar near the blue ribbon and type "icmp". This will now show traffic from icmp which there shouldn't be any traffic. icmp is what track the ping command. Minimize VM1 and go to Azure. Go to Vitrual Machines and click on VM2. Under the "Networking section", copy the Private IP address. Go back to VM1 and go to Windows Search bar and search for "Powershell" and open it. 
+Once Wireshark is open, click on the fin icon on the top left to start capturing packets. This will show all the activity on the virtual machine. Click in the search bar near the blue ribbon and type "icmp". This will now show traffic from icmp which there shouldn't be any traffic. icmp is what track the ping command. Minimize VM1 and go to Azure. Go to Vitrual Machines and click on VM2. Under the "Networking section", copy the Private IP address. Go back to VM1 and go to Windows Search bar and search for "Powershell" and open it. 
 </p>
 <br />
 
@@ -96,7 +96,7 @@ Once wireshark is open, click on the fin icon on the top left to start capturing
 <img src="https://i.imgur.com/OaJuSOl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Once PowerShell is open. Type ping and paste or type the Private IP address from VM2. You should see a reply from VM2 and activity from Wire Shark. On Wire Shark, you shoulcd see the source from VM1's IP address to the destination, which is VM2's IP address. The next line is the reply from VM2 being the source and VM1 being the destination.
+Once PowerShell is open. Type ping and paste or type the Private IP address from VM2. You should see a reply from VM2 and activity from Wireshark. On Wireshark, you shoulcd see the source from VM1's IP address to the destination, which is VM2's IP address. The next line is the reply from VM2 being the source and VM1 being the destination.
 </p>
 <br />
 
@@ -104,7 +104,7 @@ Once PowerShell is open. Type ping and paste or type the Private IP address from
 <img src="https://i.imgur.com/OaJuSOl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Next we can type ping www.google.com into PowerShell. You should see activity coming back from google. At the bottom, you can see what google is sending us, which is a bunch of random numbers and letters. We are now going to do a propetual ping to VM2. Clear out the WireShark data by clicking the "green fin looking icon' and click "Continue without Saving". Type "ping 10.0.0.5 -t" and you should start seeing it ping forever. The "-t" just continues to ping. We are now going to change the firewall to not allow icmp traffic. Ping uses icmp and it should stop it from replying to the ping. 
+Next we can type ping www.google.com into PowerShell. You should see activity coming back from google. At the bottom, you can see what google is sending us, which is a bunch of random numbers and letters. We are now going to do a propetual ping to VM2. Clear out the Wireshark data by clicking the "green fin looking icon' and click "Continue without Saving". Type "ping 10.0.0.5 -t" and you should start seeing it ping forever. The "-t" just continues to ping. We are now going to change the firewall to not allow icmp traffic. Ping uses icmp and it should stop it from replying to the ping. 
 </p>
 <br />
 
@@ -120,7 +120,7 @@ We are going to start by minimizing VM1. Its the minus sign on that blue bar on 
 <img src="https://i.imgur.com/8qDuDpD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Go back to VM1 and Wire Shark. You will now notice that the request is being timed out. That is because we set the security to deny ICMP requests. In the next section ww will enable ICMP to see the effect it has with VM1's pinging.
+Go back to VM1 and Wireshark. You will now notice that the request is being timed out. That is because we set the security to deny ICMP requests. In the next section ww will enable ICMP to see the effect it has with VM1's pinging.
 </p>
 <br />
 
@@ -136,7 +136,7 @@ In Azure, go back to Network Security group. Select VM2 and select "imbound secu
 <img src="https://i.imgur.com/LqLS5nF.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now we will go back to VM1. We will observe the ping while the security rule for VM2 is being saved. As you will see, the ping switches from timing out to successfully pinging. Press "Control C" in Powershell to stop it from pinging. Press the green fin icon to clear out wire shark. We are now going to filter through SSH. 
+Now we will go back to VM1. We will observe the ping while the security rule for VM2 is being saved. As you will see, the ping switches from timing out to successfully pinging. Press "Control C" in Powershell to stop it from pinging. Press the green fin icon to clear out Wireshark. We are now going to filter through SSH. 
 </p>
 <br />
 
@@ -144,7 +144,7 @@ Now we will go back to VM1. We will observe the ping while the security rule for
 <img src="https://i.imgur.com/798O7bX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In the search bar in Wire Shark, type in "ssh". We are going to log into VM2 through Power Shell. In Power Shell, type "ssh (username of vm2)@(vm2's private ip). For example, mine is "ssh labuser@10.0.0.5". You should see some traffic from Wire Shark when trying to log into VM2. It will ask if you want to continue connecting, type "yes". It will then have you enter the password to VM2. It will not show the password. If successful, it will log you into VM2, where you can try out a bunch of different commands from linux. Try id, pwd, ls -lasth. You will notice the activity in Wire Shark. To exit, just type "exit" and it will tell you the connection is closed.
+In the search bar in Wireshark, type in "ssh". We are going to log into VM2 through Power Shell. In Power Shell, type "ssh (username of vm2)@(vm2's private ip). For example, mine is "ssh labuser@10.0.0.5". You should see some traffic from Wireshark when trying to log into VM2. It will ask if you want to continue connecting, type "yes". It will then have you enter the password to VM2. It will not show the password. If successful, it will log you into VM2, where you can try out a bunch of different commands from linux. Try id, pwd, ls -lasth. You will notice the activity in Wireshark. To exit, just type "exit" and it will tell you the connection is closed.
 </p>
 <br />
 
@@ -152,7 +152,7 @@ In the search bar in Wire Shark, type in "ssh". We are going to log into VM2 thr
 <img src="https://i.imgur.com/CTdEh2m.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Go back up to the search bar in Wire Shark and type in dhcp. DHCP is used to automatically assign a IP address. We can config the DHCP to config a new IP address. Go to PowerShell and type "ipconfig /renew. We should see some DHCP traffic in Wire Shark. The Virtual Destop connection might go out for a second.
+Go back up to the search bar in Wireshark and type in dhcp. DHCP is used to automatically assign a IP address. We can config the DHCP to config a new IP address. Go to PowerShell and type "ipconfig /renew. We should see some DHCP traffic in Wireshark. The Virtual Destop connection might go out for a second.
 </p>
 <br />
 
@@ -160,7 +160,7 @@ Go back up to the search bar in Wire Shark and type in dhcp. DHCP is used to aut
 <img src="https://i.imgur.com/9Jyhyaj.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-We will try dns traffic. Go up to the search bar in Wire Sharp and type "dns". Click on the green fin icon to clear Wire Shark. In PowerShell type "nslookup www.google.com" we should see some DNS traffic come in. It will send us some google IP addresses.  In the Wire Shark search bar, you can type "udp.port==53". Clear out the Wire SHark info and type "nslookup www.disney.com". It should display IP addresses from Disney.
+We will try dns traffic. Go up to the search bar in Wireshark and type "dns". Click on the green fin icon to clear Wireshark. In PowerShell type "nslookup www.google.com" we should see some DNS traffic come in. It will send us some google IP addresses.  In the Wire Shark search bar, you can type "udp.port==53". Clear out the Wireshark info and type "nslookup www.disney.com". It should display IP addresses from Disney.
 </p>
 <br />
 
